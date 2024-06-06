@@ -74,6 +74,7 @@ boutonNoDescription.addEventListener("click", function () {
 });
 
 const noms = pieces.map(piece => piece.nom);
+const nomsCopy= Array.from(pieces);
 for(let i = pieces.length -1 ; i >= 0; i--){
     if(pieces[i].prix > 35){
         noms.splice(i,1);
@@ -91,3 +92,9 @@ for(let i=0; i < noms.length ; i++){
 // Ajout de l'en-tête puis de la liste au bloc résultats filtres
 document.querySelector('.abordables')
     .appendChild(abordablesElements)
+
+for(let i = pieces.length -1 ; i >= 0; i--){
+    if(pieces[i].disponibilite=False){
+        nomsCopy.splice(i,1);
+    }
+}
